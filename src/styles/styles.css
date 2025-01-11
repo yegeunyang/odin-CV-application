@@ -1,0 +1,44 @@
+#personal-details {
+    /* personal details header */
+    > h1 {
+        font-family: "Red Hat Display";
+        font-size: 1.5rem;
+        color: black;
+        margin-bottom: 0;
+    }
+
+    > hr {
+        border-color: #C5050C;
+        margin-bottom: 20px;
+    }
+
+    > form {
+        font-family: "Red Hat Text";
+        display: flex;
+        flex-direction: column;
+        gap: 0.375rem;
+
+        > .container {
+            display: flex;
+            gap: 1rem;
+    
+            > .card {
+                flex: 1 1 auto;
+                display: flex;
+                flex-direction: column;
+
+                > input, textarea {
+                    font-family: "Red Hat Text";
+                    background-color: #dcdcdc;
+                    border-radius: 5px;
+                    border: 0;
+                    padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+                }
+            }
+        }
+
+        > .container#picture {
+            align-self: center;
+        }
+    }
+}
