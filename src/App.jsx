@@ -70,6 +70,30 @@ function App() {
     { id: crypto.randomUUID(), category: "Database", skill: "PostgreSQL" },
   ]);
 
+  const [educations, setEducations] = useState({
+    list: [
+      {
+        id: crypto.randomUUID(),
+        school: "UW-Madison",
+        degree: "Mathematics, BA",
+        dateFrom: "2024/5",
+        dateTo: "2024/8",
+        city: "Madison, WI",
+        about: "Wow",
+      },
+      {
+        id: crypto.randomUUID(),
+        school: "UW-Madison",
+        degree: "Computer Science, BA",
+        dateFrom: "2024/5",
+        dateTo: "2024/8",
+        city: "Madison, WI",
+        about: "Wow",
+      },
+    ],
+    draft: null,
+  });
+
   return (
     <div id="screen">
       <div id="editor">
@@ -85,7 +109,7 @@ function App() {
             setExperiences={setExperiences}
           />
           <Skills skills={skills} setSkills={setSkills} />
-          <Education />
+          <Education educations={educations} setEducations={setEducations} />
           <Achievements />
         </div>
       </div>
