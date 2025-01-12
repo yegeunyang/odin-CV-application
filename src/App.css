@@ -1,7 +1,7 @@
 #root {
-    flex: 1 1 auto;
-    align-self: stretch;    /* take up the entire space of <body> */
-    background-color: #FFFFFF;
+  flex: 1 1 auto;
+  align-self: stretch; /* take up the entire space of <body> */
+  background-color: #ffffff;
 }
 
 #screen {
@@ -10,68 +10,67 @@
 
 /* editor on the left side */
 #editor {
-    width: 50vw;
-    display: flex;
-    flex-direction: column;
-    align-self: stretch;
-    padding: 5vh 0 10vw 0;
-    gap: 2.5vh;
-  
-    /* editor header */
-    > h1 {
-      font-family: "Red Hat Display";
-      text-align: center;
-      padding: 1rem 0 1rem 0;
-      font-size: 2rem;
-      margin: 0;
-      background-color: #C5050C;
-      color: #FFFFFF;
-    }
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  padding: 5vh 0 10vw 0;
+  gap: 2.5vh;
 
-    /* editor body */
-    > div {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      padding: 0 5vw 0 5vw;
-    }
+  /* editor header */
+  > h1 {
+    font-family: "Red Hat Display";
+    text-align: center;
+    padding: 1rem 0 1rem 0;
+    font-size: 2rem;
+    margin: 0;
+    background-color: #c5050c;
+    color: #ffffff;
   }
 
-  #viewer {
+  /* editor body */
+  > div {
     display: flex;
     flex-direction: column;
-    width: 50vw;
-    height: 100vh;
-    position: fixed;
-    right: 0;
-    background-color: grey;
+    gap: 1rem;
+    padding: 0 5vw 0 5vw;
+  }
+}
 
-    > #menu {
-      background-color: #353839;
-      height: 4.5%;
-    }
+#viewer {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  background-color: grey;
 
-    > #viewer-body {
+  > #menu {
+    background-color: #353839;
+    height: 4.5%;
+  }
+
+  > #viewer-body {
+    display: flex;
+    height: 100%;
+    padding: 1.5% 19% 4% 19%;
+
+    > #pdf {
       display: flex;
-      height: 100%;
-      padding: 1.5% 19% 4% 19%;
+      flex: 1 1 auto;
+      background-color: white;
 
-      > #pdf {
+      > #side {
+        flex: 5;
         display: flex;
-        flex: 1 1 auto;
-        background-color: white;
+        flex-direction: column;
+        background-color: #2b2e43;
+      }
 
-        > #side {
-          flex: 5;
-          display: flex;
-          flex-direction: column;
-          background-color: #2B2E43;
-        }
-
-        > #main {
-          flex: 8;
-        }
+      > #main {
+        flex: 8;
       }
     }
   }
-
+}

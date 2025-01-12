@@ -1,8 +1,5 @@
 function Experience() {
-    return (
-        <>
-        </>
-    );
+  return <></>;
 }
 
 export default Experience;

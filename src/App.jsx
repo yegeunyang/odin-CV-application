@@ -1,12 +1,16 @@
 // import { useState } from 'react'
-import PersonalDetails, { ViewContact, ViewIntro, ViewPicture } from './components/PersonalDetails';
-import Experience from './components/Experience';
-import Education from './components/Education';
-import Skills from './components/Skills';
-import Achievements from './components/Achievements';
+import PersonalDetails, {
+  ViewContact,
+  ViewIntro,
+  ViewPicture,
+} from "./components/PersonalDetails";
+import Experience from "./components/Experience";
+import Education from "./components/Education";
+import Skills from "./components/Skills";
+import Achievements from "./components/Achievements";
 
-import './App.css'
-import { useState } from 'react';
+import "./App.css";
+import { useState } from "react";
 
 function App() {
   const [personalDetails, setPersonalDetails] = useState({
@@ -18,8 +22,8 @@ function App() {
     occupation: "Cheese Logger",
     linkedin: "https://linkedin.com/",
     github: "https://github.com",
-    about: "The best cheese logger in Wisconsin."
-});
+    about: "The best cheese logger in Wisconsin.",
+  });
 
   const [picture, setPicture] = useState("profile.png");
 
@@ -28,11 +32,15 @@ function App() {
       <div id="editor">
         <h1>Resumé/CV Maker</h1>
         <div>
-        <PersonalDetails personalDetails={personalDetails} setPersonalDetails={setPersonalDetails} setPicture={setPicture}/>
-        <Experience />
-        <Education />
-        <Skills />
-        <Achievements />
+          <PersonalDetails
+            personalDetails={personalDetails}
+            setPersonalDetails={setPersonalDetails}
+            setPicture={setPicture}
+          />
+          <Experience />
+          <Education />
+          <Skills />
+          <Achievements />
         </div>
       </div>
       <div id="viewer">
@@ -50,7 +58,7 @@ function App() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

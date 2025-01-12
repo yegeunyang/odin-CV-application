@@ -1,8 +1,5 @@
 function Skills() {
-    return (
-        <>
-        </>
-    );
+  return <></>;
 }
 
 export default Skills;

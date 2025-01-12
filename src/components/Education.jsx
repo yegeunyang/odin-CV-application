@@ -1,8 +1,5 @@
 function Education() {
-    return (
-        <>
-        </>
-    );
+  return <></>;
 }
 
 export default Education;
