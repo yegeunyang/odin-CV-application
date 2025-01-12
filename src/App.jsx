@@ -1,4 +1,3 @@
-// import { useState } from 'react'
 import PersonalDetails, {
   ViewContact,
   ViewIntro,
@@ -11,6 +10,17 @@ import Achievements from "./components/Achievements";
 
 import "./App.css";
 import { useState } from "react";
+import html2canvas from "html2canvas";
+import jsPDF from 'jspdf';
+
+function printPDF() {
+  html2canvas(document.querySelector("#pdf")).then((canvas) => {
+    const imgData = canvas.toDataURL('image/png');
+    const pdf = new jsPDF();
+    pdf.addImage(imgData, 'PNG', 0, 0);
+    pdf.save('CV.pdf');
+  });
+}
 
 function App() {
   const [personalDetails, setPersonalDetails] = useState({
@@ -45,6 +55,7 @@ function App() {
       </div>
       <div id="viewer">
         <div id="menu"></div>
+          <button onClick={printPDF}>Download</button>
         <div id="viewer-body">
           <div id="pdf">
             <div id="side">

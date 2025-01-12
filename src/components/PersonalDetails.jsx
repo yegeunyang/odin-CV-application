@@ -1,5 +1,3 @@
-import "../styles/styles.css";
-
 function PersonalDetails({ personalDetails, setPersonalDetails, setPicture }) {
   const handler = (event) =>
     changePersonalDetails(event, setPersonalDetails, personalDetails);
