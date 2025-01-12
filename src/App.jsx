@@ -61,6 +61,15 @@ function App() {
     draft: null,
   });
 
+  const [skills, setSkills] = useState([
+    {
+      id: crypto.randomUUID(),
+      category: "Programming Languages",
+      skill: "C, Rust, Java, JavaScript, Python",
+    },
+    { id: crypto.randomUUID(), category: "Database", skill: "PostgreSQL" },
+  ]);
+
   return (
     <div id="screen">
       <div id="editor">
@@ -75,8 +84,8 @@ function App() {
             experiences={experiences}
             setExperiences={setExperiences}
           />
+          <Skills skills={skills} setSkills={setSkills} />
           <Education />
-          <Skills />
           <Achievements />
         </div>
       </div>

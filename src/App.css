@@ -197,10 +197,11 @@
   }
 }
 
-#experience {
+#personal-details,
+#experience,
+#skills {
   color: black;
 
-  /* personal details header */
   h1 {
     font-family: "Red Hat Display";
     font-size: 1.5rem;

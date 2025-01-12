@@ -1,4 +1,8 @@
-function PersonalDetails({ personalDetails, setPersonalDetails, setPicture }) {
+export default function PersonalDetails({
+  personalDetails,
+  setPersonalDetails,
+  setPicture,
+}) {
   const handler = (event) =>
     changePersonalDetails(event, setPersonalDetails, personalDetails);
 
@@ -127,12 +131,6 @@ function changePicture(event, setPicture) {
   }
 }
 
-export function ViewPicture({ picture }) {
-  return (
-    <img src={picture} alt="Picture cannot be displayed" id="view-picture" />
-  );
-}
-
 function changePersonalDetails(event, setPersonalDetails, personalDetails) {
   switch (event.target.id) {
     case "firstName":
@@ -166,6 +164,12 @@ function changePersonalDetails(event, setPersonalDetails, personalDetails) {
       setPersonalDetails({ ...personalDetails, about: event.target.value });
       break;
   }
+}
+
+export function ViewPicture({ picture }) {
+  return (
+    <img src={picture} alt="Picture cannot be displayed" id="view-picture" />
+  );
 }
 
 export function ViewContact({ personalDetails }) {
@@ -208,5 +212,3 @@ export function ViewIntro({ personalDetails }) {
     </div>
   );
 }
-
-export default PersonalDetails;
