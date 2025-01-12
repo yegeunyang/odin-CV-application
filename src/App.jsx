@@ -11,14 +11,14 @@ import Achievements from "./components/Achievements";
 import "./App.css";
 import { useState } from "react";
 import html2canvas from "html2canvas";
-import jsPDF from 'jspdf';
+import jsPDF from "jspdf";
 
 function printPDF() {
   html2canvas(document.querySelector("#pdf")).then((canvas) => {
-    const imgData = canvas.toDataURL('image/png');
+    const imgData = canvas.toDataURL("image/png");
     const pdf = new jsPDF();
-    pdf.addImage(imgData, 'PNG', 0, 0);
-    pdf.save('CV.pdf');
+    pdf.addImage(imgData, "PNG", 0, 0);
+    pdf.save("CV.pdf");
   });
 }
 
@@ -37,6 +37,30 @@ function App() {
 
   const [picture, setPicture] = useState("profile.png");
 
+  const [experiences, setExperiences] = useState({
+    list: [
+      {
+        id: crypto.randomUUID(),
+        title: "Web Developer Intern",
+        company: "BlowUp Inc.",
+        dateFrom: "2024/5",
+        dateTo: "2024/8",
+        city: "Madison, WI",
+        about: "Wow",
+      },
+      {
+        id: crypto.randomUUID(),
+        title: "Software Engineer Intern",
+        company: "SugarHill Inc.",
+        dateFrom: "2024/12",
+        dateTo: "2025/1",
+        city: "Chicago, IL",
+        about: "Wow",
+      },
+    ],
+    draft: null,
+  });
+
   return (
     <div id="screen">
       <div id="editor">
@@ -47,15 +71,21 @@ function App() {
             setPersonalDetails={setPersonalDetails}
             setPicture={setPicture}
           />
-          <Experience />
+          <Experience
+            experiences={experiences}
+            setExperiences={setExperiences}
+          />
           <Education />
           <Skills />
           <Achievements />
         </div>
       </div>
       <div id="viewer">
-        <div id="menu"></div>
-          <button onClick={printPDF}>Download</button>
+        <div id="menu">
+          <button onClick={printPDF}>
+            <img src="download-minimalistic-svgrepo-com.svg"></img>
+          </button>
+        </div>
         <div id="viewer-body">
           <div id="pdf">
             <div id="side">
