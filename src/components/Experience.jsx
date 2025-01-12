@@ -1,6 +1,30 @@
 export default function Experience({ experiences, setExperiences }) {
-  const draftEditHandler = (event) =>
-    editExperiencesDraft(event, setExperiences, experiences);
+  function draftEditHandler(event) {
+    // Copy experiences.draft object
+    const draft = { ...experiences.draft };
+
+    switch (event.target.id) {
+      case "title":
+        draft.title = event.target.value;
+        break;
+      case "company":
+        draft.company = event.target.value;
+        break;
+      case "dateFrom":
+        draft.dateFrom = event.target.value;
+        break;
+      case "dateTo":
+        draft.dateTo = event.target.value;
+        break;
+      case "city":
+        draft.city = event.target.value;
+        break;
+      case "about":
+        draft.about = event.target.value;
+        break;
+    }
+    setExperiences({ ...experiences, draft: draft });
+  }
 
   const draftSaveHandler = () => {
     setExperiences({
@@ -32,7 +56,7 @@ export default function Experience({ experiences, setExperiences }) {
     const handler = function () {
       setExperiences({
         ...experiences,
-        list: experiences.list.filter((e) => e.id !== experience.id),
+        list: experiences.list.filter((item) => item.id !== experience.id),
       });
     };
     return handler;
@@ -131,33 +155,6 @@ export default function Experience({ experiences, setExperiences }) {
       )}
     </div>
   );
-}
-
-function editExperiencesDraft(event, setExperiences, experiences) {
-  // Copy experiences.draft object
-  const draft = { ...experiences.draft };
-
-  switch (event.target.id) {
-    case "title":
-      draft.title = event.target.value;
-      break;
-    case "company":
-      draft.company = event.target.value;
-      break;
-    case "dateFrom":
-      draft.dateFrom = event.target.value;
-      break;
-    case "dateTo":
-      draft.dateTo = event.target.value;
-      break;
-    case "city":
-      draft.city = event.target.value;
-      break;
-    case "about":
-      draft.about = event.target.value;
-      break;
-  }
-  setExperiences({ ...experiences, draft: draft });
 }
 
 export function ViewExperience({ experiences }) {}

@@ -1,6 +1,30 @@
 export default function Experience({ educations, setEducations }) {
-  const draftEditHandler = (event) =>
-    editEducationsDraft(event, setEducations, educations);
+  function draftEditHandler(event) {
+    // Copy educations.draft object
+    const draft = { ...educations.draft };
+
+    switch (event.target.id) {
+      case "school":
+        draft.school = event.target.value;
+        break;
+      case "degree":
+        draft.degree = event.target.value;
+        break;
+      case "dateFrom":
+        draft.dateFrom = event.target.value;
+        break;
+      case "dateTo":
+        draft.dateTo = event.target.value;
+        break;
+      case "city":
+        draft.city = event.target.value;
+        break;
+      case "about":
+        draft.about = event.target.value;
+        break;
+    }
+    setEducations({ ...educations, draft: draft });
+  }
 
   const draftSaveHandler = () => {
     setEducations({
@@ -131,33 +155,6 @@ export default function Experience({ educations, setEducations }) {
       )}
     </div>
   );
-}
-
-function editEducationsDraft(event, setEducations, educations) {
-  // Copy educations.draft object
-  const draft = { ...educations.draft };
-
-  switch (event.target.id) {
-    case "school":
-      draft.school = event.target.value;
-      break;
-    case "degree":
-      draft.degree = event.target.value;
-      break;
-    case "dateFrom":
-      draft.dateFrom = event.target.value;
-      break;
-    case "dateTo":
-      draft.dateTo = event.target.value;
-      break;
-    case "city":
-      draft.city = event.target.value;
-      break;
-    case "about":
-      draft.about = event.target.value;
-      break;
-  }
-  setEducations({ ...educations, draft: draft });
 }
 
 export function ViewEducation({ educations }) {}

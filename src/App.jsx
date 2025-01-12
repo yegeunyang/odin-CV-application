@@ -65,9 +65,9 @@ function App() {
     {
       id: crypto.randomUUID(),
       category: "Programming Languages",
-      skill: "C, Rust, Java, JavaScript, Python",
+      item: "C, Rust, Java, JavaScript, Python",
     },
-    { id: crypto.randomUUID(), category: "Database", skill: "PostgreSQL" },
+    { id: crypto.randomUUID(), category: "Database", item: "PostgreSQL" },
   ]);
 
   const [educations, setEducations] = useState({
@@ -94,6 +94,17 @@ function App() {
     draft: null,
   });
 
+  const [achievements, setAchievements] = useState([
+    {
+      id: crypto.randomUUID(),
+      item: "waaa",
+    },
+    {
+      id: crypto.randomUUID(),
+      item: "heheheh",
+    },
+  ]);
+
   return (
     <div id="screen">
       <div id="editor">
@@ -110,7 +121,10 @@ function App() {
           />
           <Skills skills={skills} setSkills={setSkills} />
           <Education educations={educations} setEducations={setEducations} />
-          <Achievements />
+          <Achievements
+            achievements={achievements}
+            setAchievements={setAchievements}
+          ></Achievements>
         </div>
       </div>
       <div id="viewer">

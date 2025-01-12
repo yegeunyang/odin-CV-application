@@ -3,8 +3,55 @@ export default function PersonalDetails({
   setPersonalDetails,
   setPicture,
 }) {
-  const handler = (event) =>
-    changePersonalDetails(event, setPersonalDetails, personalDetails);
+  function changePictureHandler(event) {
+    if (event.target.files.length !== 0) {
+      setPicture(URL.createObjectURL(event.target.files[0]));
+    }
+  }
+
+  function editPersonalDetailsHandler(event) {
+    switch (event.target.id) {
+      case "firstName":
+        setPersonalDetails({
+          ...personalDetails,
+          firstName: event.target.value,
+        });
+        break;
+      case "lastName":
+        setPersonalDetails({
+          ...personalDetails,
+          lastName: event.target.value,
+        });
+        break;
+      case "email":
+        setPersonalDetails({ ...personalDetails, email: event.target.value });
+        break;
+      case "phone":
+        setPersonalDetails({ ...personalDetails, phone: event.target.value });
+        break;
+      case "address":
+        setPersonalDetails({ ...personalDetails, address: event.target.value });
+        break;
+      case "occupation":
+        setPersonalDetails({
+          ...personalDetails,
+          occupation: event.target.value,
+        });
+        break;
+      case "linkedin":
+        setPersonalDetails({
+          ...personalDetails,
+          linkedin: event.target.value,
+        });
+        break;
+      case "github":
+        setPersonalDetails({ ...personalDetails, github: event.target.value });
+        break;
+      case "about":
+        setPersonalDetails({ ...personalDetails, about: event.target.value });
+        break;
+    }
+  }
 
   return (
     <div id="personal-details">
@@ -19,7 +66,7 @@ export default function PersonalDetails({
               id="firstName"
               name="firstName"
               value={personalDetails.firstName}
-              onChange={handler}
+              onChange={editPersonalDetailsHandler}
             />
           </div>
           <div className="card">
@@ -29,7 +76,7 @@ export default function PersonalDetails({
               id="lastName"
               name="lastName"
               value={personalDetails.lastName}
-              onChange={handler}
+              onChange={editPersonalDetailsHandler}
             />
           </div>
         </div>
@@ -41,7 +88,7 @@ export default function PersonalDetails({
               id="email"
               name="email"
               value={personalDetails.email}
-              onChange={handler}
+              onChange={editPersonalDetailsHandler}
             />
           </div>
           <div className="card">
@@ -51,7 +98,7 @@ export default function PersonalDetails({
               id="phone"
               name="phone"
               value={personalDetails.phone}
-              onChange={handler}
+              onChange={editPersonalDetailsHandler}
             />
           </div>
         </div>
@@ -63,7 +110,7 @@ export default function PersonalDetails({
               id="address"
               name="address"
               value={personalDetails.address}
-              onChange={handler}
+              onChange={editPersonalDetailsHandler}
             />
           </div>
           <div className="card">
@@ -73,7 +120,7 @@ export default function PersonalDetails({
               id="occupation"
               name="occupation"
               value={personalDetails.occupation}
-              onChange={handler}
+              onChange={editPersonalDetailsHandler}
             />
           </div>
         </div>
@@ -85,7 +132,7 @@ export default function PersonalDetails({
               id="linkedin"
               name="linkedin"
               value={personalDetails.linkedin}
-              onChange={handler}
+              onChange={editPersonalDetailsHandler}
             />
           </div>
           <div className="card">
@@ -95,7 +142,7 @@ export default function PersonalDetails({
               id="github"
               name="github"
               value={personalDetails.github}
-              onChange={handler}
+              onChange={editPersonalDetailsHandler}
             />
           </div>
         </div>
@@ -106,7 +153,7 @@ export default function PersonalDetails({
               id="about"
               rows="4"
               value={personalDetails.about}
-              onChange={handler}
+              onChange={editPersonalDetailsHandler}
             />
           </div>
         </div>
@@ -116,54 +163,13 @@ export default function PersonalDetails({
             <input
               type="file"
               name="profilePicture"
-              onChange={(event) => changePicture(event, setPicture)}
+              onChange={changePictureHandler}
             />
           </div>
         </div>
       </form>
     </div>
   );
-}
-
-function changePicture(event, setPicture) {
-  if (event.target.files.length !== 0) {
-    setPicture(URL.createObjectURL(event.target.files[0]));
-  }
-}
-
-function changePersonalDetails(event, setPersonalDetails, personalDetails) {
-  switch (event.target.id) {
-    case "firstName":
-      setPersonalDetails({ ...personalDetails, firstName: event.target.value });
-      break;
-    case "lastName":
-      setPersonalDetails({ ...personalDetails, lastName: event.target.value });
-      break;
-    case "email":
-      setPersonalDetails({ ...personalDetails, email: event.target.value });
-      break;
-    case "phone":
-      setPersonalDetails({ ...personalDetails, phone: event.target.value });
-      break;
-    case "address":
-      setPersonalDetails({ ...personalDetails, address: event.target.value });
-      break;
-    case "occupation":
-      setPersonalDetails({
-        ...personalDetails,
-        occupation: event.target.value,
-      });
-      break;
-    case "linkedin":
-      setPersonalDetails({ ...personalDetails, linkedin: event.target.value });
-      break;
-    case "github":
-      setPersonalDetails({ ...personalDetails, github: event.target.value });
-      break;
-    case "about":
-      setPersonalDetails({ ...personalDetails, about: event.target.value });
-      break;
-  }
 }
 
 export function ViewPicture({ picture }) {
