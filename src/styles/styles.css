@@ -1,34 +1,36 @@
 #personal-details {
     /* personal details header */
-    > h1 {
+    h1 {
         font-family: "Red Hat Display";
         font-size: 1.5rem;
         color: black;
         margin-bottom: 0;
     }
 
-    > hr {
+    hr {
         border-color: #C5050C;
-        margin-bottom: 20px;
+        margin-bottom: 1rem;
     }
 
-    > form {
+    form {
         font-family: "Red Hat Text";
         display: flex;
         flex-direction: column;
         gap: 0.375rem;
 
-        > .container {
+        .container {
             display: flex;
             gap: 1rem;
     
-            > .card {
+            .card {
+                color: black;
                 flex: 1 1 auto;
                 display: flex;
                 flex-direction: column;
 
-                > input, textarea {
+                input, textarea {
                     font-family: "Red Hat Text";
+                    color: black;
                     background-color: #dcdcdc;
                     border-radius: 5px;
                     border: 0;
@@ -37,8 +39,69 @@
             }
         }
 
-        > .container#picture {
+        .container#picture {
             align-self: center;
         }
+    }
+}
+
+#view-picture {
+    height: 125px;
+    width: 125px;
+    border-radius: 50%;
+    margin: 35px auto;
+}
+
+#view-contact {
+    color: white;
+    margin-left: 20%;
+
+    h2 {
+        border-bottom: 1px solid white;
+        margin: 0;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+            display: flex;
+            flex-direction: column;
+            font-weight: 800;
+
+            span {
+                font-weight: 200;
+                font-size: 0.625rem;
+            }
+        }
+    }
+}
+
+#view-intro {
+    color: #2B2E43;
+
+    h1 { 
+        font-size: 2rem;
+        letter-spacing: 0.2rem;
+        padding-top: 10%;
+        padding-left: 5%;
+        margin: 0;
+        span {
+            font-weight: 400;
+        }
+    }   
+
+    h2 {
+        letter-spacing: 0.1rem;
+        font-size: 1rem;
+        padding-left: 5%;
+        margin: 0;
+    }
+
+    p {
+        font-size: 1rem;
+        padding-left: 5%;
+        margin: 0;
     }
 }
