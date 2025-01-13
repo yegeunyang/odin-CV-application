@@ -166,13 +166,13 @@ export function ViewExperience({ experiences }) {
         return (
           <div className="container" key={experience.id}>
             <h2>{experience.title}</h2>
-            <p>
+            <p className="date">
               {experience.dateFrom} - {experience.dateTo}
             </p>
-            <p>
+            <p className="location">
               {experience.company} - {experience.city}
             </p>
-            <p>{experience.about}</p>
+            <p className="about">{experience.about}</p>
           </div>
         );
       })}

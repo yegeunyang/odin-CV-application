@@ -166,13 +166,13 @@ export function ViewEducation({ educations }) {
         return (
           <div className="container" key={education.id}>
             <h2>{education.degree}</h2>
-            <p>
+            <p className="date">
               {education.dateFrom} - {education.dateTo}
             </p>
-            <p>
+            <p className="location">
               {education.school} - {education.city}
             </p>
-            <p>{education.about}</p>
+            <p className="about">{education.about}</p>
           </div>
         );
       })}

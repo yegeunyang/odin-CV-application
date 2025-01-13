@@ -17,7 +17,15 @@ function printPDF() {
   html2canvas(document.querySelector("#pdf")).then((canvas) => {
     const imgData = canvas.toDataURL("image/png");
     const pdf = new jsPDF();
+    /*
     pdf.addImage(imgData, "PNG", 0, 0);
+    */
+
+    /* possibly edit this */
+    const imgProps = pdf.getImageProperties(imgData);
+    const pdfWidth = pdf.internal.pageSize.getWidth();
+    const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+    pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
     pdf.save("CV.pdf");
   });
 }
