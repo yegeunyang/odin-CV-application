@@ -199,6 +199,10 @@
 }
 
 #skills {
+  button {
+    color: black;
+  }
+
   form .container {
     display: flex;
 
