@@ -14,37 +14,29 @@ export default function Skills({ skills, setSkills }) {
 
   const editSkillHandler = function editSkillHandlerWraper(skill) {
     const handler = function (event) {
-      if (event.target.name == "category") {
-        setSkills(
-          skills.map((item) => {
-            if (item.id === skill.id) {
+      setSkills(
+        skills.map((item) => {
+          if (item.id === skill.id) {
+            if (event.target.name == "category") {
               return {
                 id: item.id,
                 category: event.target.value,
                 skill: item.skill,
               };
-            } else {
-              return item;
             }
-          }),
-        );
-      }
 
-      if (event.target.name == "skill") {
-        setSkills(
-          skills.map((item) => {
-            if (item.id === skill.id) {
+            if (event.target.name == "skill") {
               return {
                 id: item.id,
                 category: item.category,
-                skill: event.target.value,
+                item: event.target.value,
               };
-            } else {
-              return item;
             }
-          }),
-        );
-      }
+          } else {
+            return item;
+          }
+        }),
+      );
     };
     return handler;
   };
