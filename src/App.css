@@ -11,7 +11,7 @@
   --main-text-color: #2b2e43;
   --viewer-background-color: #989898;
   --pdf-width: calc(31vw);
-  --pdf-height: calc(1.41421356237 * var(--pdf-width));
+  --pdf-height: calc(1.417 * var(--pdf-width));
 }
 
 #screen {
