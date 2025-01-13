@@ -1,9 +1,7 @@
 export default function Skills({ skills, setSkills }) {
   const addSkillHandler = () => {
     setSkills(
-      skills.concat([
-        { id: crypto.randomUUID(), category: "Wow", item: "Meh" },
-      ]),
+      skills.concat([{ id: crypto.randomUUID(), category: "", item: "" }]),
     );
   };
 
@@ -68,7 +66,7 @@ export default function Skills({ skills, setSkills }) {
               />
               <input
                 type="text"
-                                className="skill"
+                className="skill"
                 name="skill"
                 value={skill.item}
                 onChange={editSkillHandler(skill)}

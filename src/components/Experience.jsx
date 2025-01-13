@@ -43,12 +43,12 @@ export default function Experience({ experiences, setExperiences }) {
       ...experiences,
       draft: {
         id: "",
-        title: "Software Engineer",
-        company: "McDonald's",
-        dateFrom: "2026/10",
-        dateTo: "Present",
-        city: "New York",
-        about: "Meh",
+        title: "",
+        company: "",
+        dateFrom: "",
+        dateTo: "",
+        city: "",
+        about: "",
       },
     });
 

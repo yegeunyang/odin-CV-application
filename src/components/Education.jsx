@@ -43,12 +43,12 @@ export default function Experience({ educations, setEducations }) {
       ...educations,
       draft: {
         id: "",
-        school: "Software Engineer",
-        degree: "McDonald's",
-        dateFrom: "2026/10",
-        dateTo: "Present",
-        city: "New York",
-        about: "Meh",
+        school: "",
+        degree: "",
+        dateFrom: "",
+        dateTo: "",
+        city: "",
+        about: "",
       },
     });
 

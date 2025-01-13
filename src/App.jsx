@@ -27,12 +27,13 @@ function App() {
     firstName: "Jane",
     lastName: "Doe",
     email: "janedoe@icloud.com",
-    phone: "(777) 777-7777",
+    phone: "(555) 555-5555",
     address: "Madison, Wsiconsin",
-    occupation: "Cheese Logger",
-    linkedin: "https://linkedin.com/",
-    github: "https://github.com",
-    about: "The best cheese logger in Wisconsin.",
+    occupation: "Software Engineer",
+    linkedin: "https://linkedin.com/janedoe",
+    github: "https://github.com/janedoe",
+    about:
+      "Highly motivated Software Engineer with 4+ years of experience in designing, developing, and deploying scalable and user-friendly web and mobile applications. Proficient in a wide range of programming languages and frameworks, with a strong focus on delivering clean, efficient code and innovative solutions. Passionate about problem-solving, learning new technologies, and building impactful software.",
   });
 
   const [picture, setPicture] = useState("profile.png");
@@ -41,21 +42,23 @@ function App() {
     list: [
       {
         id: crypto.randomUUID(),
-        title: "Web Developer Intern",
-        company: "BlowUp Inc.",
-        dateFrom: "2024/5",
-        dateTo: "2024/8",
-        city: "Madison, WI",
-        about: "Wow",
+        title: "Software Engineer",
+        company: "ABC Mega Tech Solutions.",
+        dateFrom: "2020/06",
+        dateTo: "2024/08",
+        city: "San Francisco, CA",
+        about:
+          "Developed and maintained scalable web applications using React.js and Node.js",
       },
       {
         id: crypto.randomUUID(),
-        title: "Software Engineer Intern",
-        company: "SugarHill Inc.",
-        dateFrom: "2024/12",
-        dateTo: "2025/1",
+        title: "Full Stack Developer",
+        company: "XYZ Amazing Software.",
+        dateFrom: "2024/08",
+        dateTo: "Present",
         city: "Chicago, IL",
-        about: "Wow",
+        about:
+          "Built responsive and dynamic web applications using React.js, Express.js, and MongoDB",
       },
     ],
     draft: null,
@@ -67,7 +70,16 @@ function App() {
       category: "Programming Languages",
       item: "C, Rust, Java, JavaScript, Python",
     },
-    { id: crypto.randomUUID(), category: "Database", item: "PostgreSQL" },
+    {
+      id: crypto.randomUUID(),
+      category: "Frameworks & Libraries",
+      item: "React.js, Node.js, Django",
+    },
+    {
+      id: crypto.randomUUID(),
+      category: "Databases",
+      item: "PostgreSQL, MongoDB",
+    },
   ]);
 
   const [educations, setEducations] = useState({
@@ -76,19 +88,19 @@ function App() {
         id: crypto.randomUUID(),
         school: "UW-Madison",
         degree: "Mathematics, BA",
-        dateFrom: "2024/5",
-        dateTo: "2024/8",
+        dateFrom: "2018/09",
+        dateTo: "2020/05",
         city: "Madison, WI",
-        about: "Wow",
+        about: "3.8/4.0 GPA, took Topology and Differential Geometry",
       },
       {
         id: crypto.randomUUID(),
         school: "UW-Madison",
         degree: "Computer Science, BA",
-        dateFrom: "2024/5",
-        dateTo: "2024/8",
+        dateFrom: "2018/09",
+        dateTo: "2020/05",
         city: "Madison, WI",
-        about: "Wow",
+        about: "3.8/4.0 GPA, took Algorithms and Operating Systems",
       },
     ],
     draft: null,
@@ -97,11 +109,11 @@ function App() {
   const [achievements, setAchievements] = useState([
     {
       id: crypto.randomUUID(),
-      item: "waaa",
+      item: "AWS Uncertified Architect",
     },
     {
       id: crypto.randomUUID(),
-      item: "heheheh",
+      item: "Professional Googler",
     },
   ]);
 

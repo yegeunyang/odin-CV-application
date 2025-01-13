@@ -196,13 +196,13 @@
 #skills {
   form .container {
     display: flex;
-  
+
     .category {
       flex: 3;
     }
 
     .skill {
-      flex: 7
+      flex: 7;
     }
 
     input {
