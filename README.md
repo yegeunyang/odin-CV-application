@@ -1,8 +1,17 @@
-# React + Vite
+# Overview
+This is part of [The Odin Project](https://www.theodinproject.com/dashboard) Full Stack JavaScript course projects.
+This project builds a website that allows a user write their own resumé and download it as a PDF file.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Technologies Used
+- HTML
+- CSS
+- JavaScript(React.js)
 
-Currently, two official plugins are available:
+# Goal
+- Understand how components and states work in React.js
+- Understand and apply advanced CSS techniques.
+- User must be able to edit or delete what they wrote.
+- User must be able to download the completed resumé as a PDF file.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Acknowledgments
+- Thanks to [The Odin Project](https://www.theodinproject.com/dashboard) for the guidance.
