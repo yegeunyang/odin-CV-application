@@ -158,4 +158,24 @@ export default function Experience({ educations, setEducations }) {
   );
 }
 
-export function ViewEducation({ educations }) {}
+export function ViewEducation({ educations }) {
+  return (
+    <div id="view-education">
+      <h1>Education</h1>
+      {educations.list.map((education) => {
+        return (
+          <div className="container" key={education.id}>
+            <h2>{education.degree}</h2>
+            <p>
+              {education.dateFrom} - {education.dateTo}
+            </p>
+            <p>
+              {education.school} - {education.city}
+            </p>
+            <p>{education.about}</p>
+          </div>
+        );
+      })}
+    </div>
+  );
+}

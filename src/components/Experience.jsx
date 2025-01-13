@@ -158,4 +158,24 @@ export default function Experience({ experiences, setExperiences }) {
   );
 }
 
-export function ViewExperience({ experiences }) {}
+export function ViewExperience({ experiences }) {
+  return (
+    <div id="view-experience">
+      <h1>Experience</h1>
+      {experiences.list.map((experience) => {
+        return (
+          <div className="container" key={experience.id}>
+            <h2>{experience.title}</h2>
+            <p>
+              {experience.dateFrom} - {experience.dateTo}
+            </p>
+            <p>
+              {experience.company} - {experience.city}
+            </p>
+            <p>{experience.about}</p>
+          </div>
+        );
+      })}
+    </div>
+  );
+}

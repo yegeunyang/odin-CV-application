@@ -46,3 +46,16 @@ export default function Achievements({ achievements, setAchievements }) {
     </div>
   );
 }
+
+export function ViewAchievements({ achievements }) {
+  return (
+    <div id="view-achievements">
+      <h2>Achievements</h2>
+      <ul>
+        {achievements.map((achievement) => {
+          return <li key={achievement.id}>{achievement.item}</li>;
+        })}
+      </ul>
+    </div>
+  );
+}

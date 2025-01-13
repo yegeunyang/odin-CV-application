@@ -8,6 +8,7 @@
   --outline-color: #333333;
   --menu-background-color: #353839;
   --side-background-color: #2b2e43;
+  --main-text-color: #2b2e43;
   --viewer-background-color: #989898;
 }
 
@@ -285,7 +286,8 @@
   margin: 35px auto;
 }
 
-#view-contact {
+#view-contact,
+#view-achievements {
   color: white;
   margin-left: 20%;
 
@@ -311,8 +313,11 @@
   }
 }
 
-#view-intro {
-  color: #2b2e43;
+#view-intro,
+#view-experience,
+#view-education,
+#view-skills {
+  color: var(--main-text-color);
 
   h1 {
     font-size: 2rem;

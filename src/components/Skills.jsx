@@ -82,3 +82,20 @@ export default function Skills({ skills, setSkills }) {
     </div>
   );
 }
+
+export function ViewSkills({ skills }) {
+  return (
+    <div id="view-skills">
+      <h1>Skills</h1>
+      <ul>
+        {skills.map((skill) => {
+          return (
+            <li key={skill.id}>
+              {skill.category} <span>{skill.item}</span>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+}

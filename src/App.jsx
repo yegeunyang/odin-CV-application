@@ -3,10 +3,10 @@ import PersonalDetails, {
   ViewIntro,
   ViewPicture,
 } from "./components/PersonalDetails";
-import Experience from "./components/Experience";
-import Education from "./components/Education";
-import Skills from "./components/Skills";
-import Achievements from "./components/Achievements";
+import Experience, { ViewExperience } from "./components/Experience";
+import Education, { ViewEducation } from "./components/Education";
+import Skills, { ViewSkills } from "./components/Skills";
+import Achievements, { ViewAchievements } from "./components/Achievements";
 
 import "./App.css";
 import { useState } from "react";
@@ -150,9 +150,13 @@ function App() {
             <div id="side">
               <ViewPicture picture={picture}></ViewPicture>
               <ViewContact personalDetails={personalDetails}></ViewContact>
+              <ViewAchievements achievements={achievements}></ViewAchievements>
             </div>
             <div id="main">
               <ViewIntro personalDetails={personalDetails}></ViewIntro>
+              <ViewExperience experiences={experiences}></ViewExperience>
+              <ViewSkills skills={skills}></ViewSkills>
+              <ViewEducation educations={educations}></ViewEducation>
             </div>
           </div>
         </div>
