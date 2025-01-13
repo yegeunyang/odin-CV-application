@@ -56,33 +56,31 @@ export default function Skills({ skills, setSkills }) {
       <h1>Skills</h1>
       <hr />
       <form>
-        <div className="container">
-          <h3>Categories: </h3>
-          <h3>Skills: </h3>
-        </div>
         {skills.map((skill) => {
           return (
             <div key={skill.id} className="container">
               <input
                 type="text"
+                className="category"
                 name="category"
                 value={skill.category}
                 onChange={editSkillHandler(skill)}
               />
               <input
                 type="text"
+                                className="skill"
                 name="skill"
                 value={skill.item}
                 onChange={editSkillHandler(skill)}
               />
               <button onClick={deleteSkillHandler(skill)}>
-                <img src="delete-svgrepo-com.svg"></img>
+                <img src="delete-1-svgrepo-com-2.svg"></img>
               </button>
             </div>
           );
         })}
       </form>
-      <button onClick={addSkillHandler}>Add Skill</button>
+      <button onClick={addSkillHandler}>+ Add Skill</button>
     </div>
   );
 }

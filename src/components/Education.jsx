@@ -68,12 +68,11 @@ export default function Experience({ educations, setEducations }) {
       <hr />
       {educations.list.map((education) => {
         return (
-          <div key={education.id} className="container">
+          <div key={education.id} className="panel">
             <div>
               <h3>
                 {education.degree} at {education.school}
               </h3>
-              <br />
               {education.dateFrom} - {education.dateTo}
             </div>
             <button onClick={deleteItemHandler(education)}>
@@ -109,20 +108,22 @@ export default function Experience({ educations, setEducations }) {
           <div className="container">
             <div className="card">
               <label>Date: </label>
-              <input
-                type="text"
-                id="dateFrom"
-                name="dateFrom"
-                value={educations.draft.dateFrom}
-                onChange={draftEditHandler}
-              />
-              <input
-                type="text"
-                id="dateTo"
-                name="dateTo"
-                value={educations.draft.dateTo}
-                onChange={draftEditHandler}
-              />
+              <div id="card-container">
+                <input
+                  type="text"
+                  id="dateFrom"
+                  name="dateFrom"
+                  value={educations.draft.dateFrom}
+                  onChange={draftEditHandler}
+                />
+                <input
+                  type="text"
+                  id="dateTo"
+                  name="dateTo"
+                  value={educations.draft.dateTo}
+                  onChange={draftEditHandler}
+                />
+              </div>
             </div>
             <div className="card">
               <label>City: </label>
@@ -151,7 +152,7 @@ export default function Experience({ educations, setEducations }) {
           <button onClick={draftSaveHandler}>Save</button>
         </form>
       ) : (
-        <button onClick={addEducationHandler}>Add Education</button>
+        <button onClick={addEducationHandler}>+ Add Education</button>
       )}
     </div>
   );

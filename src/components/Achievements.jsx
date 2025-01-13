@@ -29,7 +29,7 @@ export default function Achievements({ achievements, setAchievements }) {
       <h1>Achievements</h1>
       <hr />
       <form onSubmit={addAchievementHandler}>
-        <input type="text" name="content"></input>
+        <input type="text" placeholder="Enter" name="content"></input>
       </form>
       <div className="container">
         {achievements.map((achievement) => {

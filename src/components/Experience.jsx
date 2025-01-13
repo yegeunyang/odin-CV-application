@@ -68,12 +68,11 @@ export default function Experience({ experiences, setExperiences }) {
       <hr />
       {experiences.list.map((experience) => {
         return (
-          <div key={experience.id} className="container">
+          <div key={experience.id} className="panel">
             <div>
               <h3>
                 {experience.title} at {experience.company}
               </h3>
-              <br />
               {experience.dateFrom} - {experience.dateTo}
             </div>
             <button onClick={deleteItemHandler(experience)}>
@@ -109,20 +108,22 @@ export default function Experience({ experiences, setExperiences }) {
           <div className="container">
             <div className="card">
               <label>Date: </label>
-              <input
-                type="text"
-                id="dateFrom"
-                name="dateFrom"
-                value={experiences.draft.dateFrom}
-                onChange={draftEditHandler}
-              />
-              <input
-                type="text"
-                id="dateTo"
-                name="dateTo"
-                value={experiences.draft.dateTo}
-                onChange={draftEditHandler}
-              />
+              <div id="card-container">
+                <input
+                  type="text"
+                  id="dateFrom"
+                  name="dateFrom"
+                  value={experiences.draft.dateFrom}
+                  onChange={draftEditHandler}
+                />
+                <input
+                  type="text"
+                  id="dateTo"
+                  name="dateTo"
+                  value={experiences.draft.dateTo}
+                  onChange={draftEditHandler}
+                />
+              </div>
             </div>
             <div className="card">
               <label>City: </label>
@@ -151,7 +152,7 @@ export default function Experience({ experiences, setExperiences }) {
           <button onClick={draftSaveHandler}>Save</button>
         </form>
       ) : (
-        <button onClick={addExperienceHandler}>Add Experience</button>
+        <button onClick={addExperienceHandler}>+ Add Experience</button>
       )}
     </div>
   );

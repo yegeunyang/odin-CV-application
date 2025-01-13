@@ -71,7 +71,7 @@
 
     > #pdf {
       display: flex;
-      flex: 1 1 auto;
+      flex: 1 1 0;
       background-color: white;
 
       > #side {
@@ -88,8 +88,11 @@
   }
 }
 
-#personal-details {
-  /* personal details header */
+#personal-details,
+#experience,
+#skills,
+#education,
+#achievements {
   h1 {
     font-family: "Red Hat Display";
     font-size: 1.5rem;
@@ -102,11 +105,26 @@
     margin-bottom: 1rem;
   }
 
+  button {
+    background-color: white;
+    padding: 0;
+    height: 25px;
+
+    img {
+      width: 25px;
+      height: 25px;
+    }
+  }
+
   form {
     font-family: "Red Hat Text";
     display: flex;
     flex-direction: column;
     gap: 0.375rem;
+
+    button {
+      align-self: center;
+    }
 
     .container {
       display: flex;
@@ -114,12 +132,13 @@
 
       .card {
         color: black;
-        flex: 1 1 auto;
+        flex: 1 1 0; /* There is difference between 1 1 0 and 1 1 auto */
         display: flex;
         flex-direction: column;
 
         input,
         textarea {
+          flex: 1 1 auto;
           font-family: "Red Hat Text";
           color: black;
           background-color: #dcdcdc;
@@ -127,12 +146,119 @@
           border: 0;
           padding: 0.375rem 0.5rem 0.375rem 0.5rem;
         }
+
+        input:focus,
+        input:hover,
+        textarea:focus,
+        textarea:hover {
+          outline: 2px solid #333333;
+        }
       }
     }
+  }
+}
 
-    .container#picture {
-      align-self: center;
+#personal-details {
+  .container#picture {
+    align-self: center;
+  }
+}
+
+#experience,
+#education {
+  .panel {
+    font-family: "Red Hat Text";
+    display: flex;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    align-items: center;
+    border: 2px solid grey;
+    border-radius: 10px;
+
+    div {
+      flex: 1 1 0;
+      font-weight: 500;
+
+      h3 {
+        margin: 0;
+      }
     }
+  }
+
+  #card-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+  }
+}
+
+#skills {
+  form .container {
+    display: flex;
+  
+    .category {
+      flex: 3;
+    }
+
+    .skill {
+      flex: 7
+    }
+
+    input {
+      font-family: "Red Hat Text";
+      color: black;
+      background-color: #dcdcdc;
+      border-radius: 5px;
+      border: 0;
+      padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    button {
+      margin-bottom: 0.5rem;
+    }
+
+    input:focus,
+    input:hover {
+      outline: 2px solid #333333;
+    }
+  }
+}
+
+#achievements {
+  input {
+    width: 200px;
+    font-family: "Red Hat Text";
+    color: black;
+    background-color: #dcdcdc;
+    border-radius: 5px;
+    border: 0;
+    padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+  }
+
+  input:focus,
+  input:hover {
+    outline: 2px solid #333333;
+  }
+
+  .container {
+    margin-top: 1rem;
+    display: block;
+  }
+
+  button {
+    background-color: #333333;
+    color: white;
+    padding: 5px 20px;
+    margin: 3px 6px;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  button:hover {
+    text-decoration: line-through;
   }
 }
 
@@ -194,42 +320,5 @@
     font-size: 1rem;
     padding-left: 5%;
     margin: 0;
-  }
-}
-
-#personal-details,
-#experience,
-#skills,
-#education,
-#achievements {
-  color: black;
-
-  h1 {
-    font-family: "Red Hat Display";
-    font-size: 1.5rem;
-    margin-bottom: 0;
-  }
-
-  hr {
-    border-color: #c5050c;
-    margin-bottom: 1rem;
-  }
-
-  /* change this later */
-  .container {
-    font-family: "Red Hat Text";
-    display: flex;
-    border: 1px solid black;
-
-    button {
-      background-color: white;
-      padding: 0;
-      height: 25px;
-
-      img {
-        width: 25px;
-        height: 25px;
-      }
-    }
   }
 }
