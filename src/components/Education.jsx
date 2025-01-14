@@ -10,11 +10,8 @@ export default function Experience({ educations, setEducations }) {
       case "degree":
         draft.degree = event.target.value;
         break;
-      case "dateFrom":
-        draft.dateFrom = event.target.value;
-        break;
-      case "dateTo":
-        draft.dateTo = event.target.value;
+      case "date":
+        draft.date = event.target.value;
         break;
       case "city":
         draft.city = event.target.value;
@@ -45,8 +42,7 @@ export default function Experience({ educations, setEducations }) {
         id: "",
         school: "",
         degree: "",
-        dateFrom: "",
-        dateTo: "",
+        date: "",
         city: "",
         about: "",
       },
@@ -73,7 +69,7 @@ export default function Experience({ educations, setEducations }) {
               <h3>
                 {education.degree} at {education.school}
               </h3>
-              {education.dateFrom} - {education.dateTo}
+              {education.date}
             </div>
             <button onClick={deleteItemHandler(education)}>
               <img src="delete-svgrepo-com.svg"></img>
@@ -108,22 +104,13 @@ export default function Experience({ educations, setEducations }) {
           <div className="container">
             <div className="card">
               <label>Date: </label>
-              <div id="card-container">
-                <input
-                  type="text"
-                  id="dateFrom"
-                  name="dateFrom"
-                  value={educations.draft.dateFrom}
-                  onChange={draftEditHandler}
-                />
-                <input
-                  type="text"
-                  id="dateTo"
-                  name="dateTo"
-                  value={educations.draft.dateTo}
-                  onChange={draftEditHandler}
-                />
-              </div>
+              <input
+                type="text"
+                id="date"
+                name="date"
+                value={educations.draft.date}
+                onChange={draftEditHandler}
+              />
             </div>
             <div className="card">
               <label>City: </label>
@@ -166,9 +153,7 @@ export function ViewEducation({ educations }) {
         return (
           <div className="container" key={education.id}>
             <h2>{education.degree}</h2>
-            <p className="date">
-              {education.dateFrom} - {education.dateTo}
-            </p>
+            <p className="date">{education.date}</p>
             <p className="location">
               {education.school} - {education.city}
             </p>

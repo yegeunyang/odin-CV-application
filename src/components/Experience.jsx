@@ -10,11 +10,8 @@ export default function Experience({ experiences, setExperiences }) {
       case "company":
         draft.company = event.target.value;
         break;
-      case "dateFrom":
-        draft.dateFrom = event.target.value;
-        break;
-      case "dateTo":
-        draft.dateTo = event.target.value;
+      case "date":
+        draft.date = event.target.value;
         break;
       case "city":
         draft.city = event.target.value;
@@ -45,8 +42,7 @@ export default function Experience({ experiences, setExperiences }) {
         id: "",
         title: "",
         company: "",
-        dateFrom: "",
-        dateTo: "",
+        date: "",
         city: "",
         about: "",
       },
@@ -73,7 +69,7 @@ export default function Experience({ experiences, setExperiences }) {
               <h3>
                 {experience.title} at {experience.company}
               </h3>
-              {experience.dateFrom} - {experience.dateTo}
+              {experience.date}
             </div>
             <button onClick={deleteItemHandler(experience)}>
               <img src="delete-svgrepo-com.svg"></img>
@@ -108,22 +104,13 @@ export default function Experience({ experiences, setExperiences }) {
           <div className="container">
             <div className="card">
               <label>Date: </label>
-              <div id="card-container">
-                <input
-                  type="text"
-                  id="dateFrom"
-                  name="dateFrom"
-                  value={experiences.draft.dateFrom}
-                  onChange={draftEditHandler}
-                />
-                <input
-                  type="text"
-                  id="dateTo"
-                  name="dateTo"
-                  value={experiences.draft.dateTo}
-                  onChange={draftEditHandler}
-                />
-              </div>
+              <input
+                type="text"
+                id="date"
+                name="date"
+                value={experiences.draft.date}
+                onChange={draftEditHandler}
+              />
             </div>
             <div className="card">
               <label>City: </label>
@@ -166,9 +153,7 @@ export function ViewExperience({ experiences }) {
         return (
           <div className="container" key={experience.id}>
             <h2>{experience.title}</h2>
-            <p className="date">
-              {experience.dateFrom} - {experience.dateTo}
-            </p>
+            <p className="date">{experience.date}</p>
             <p className="location">
               {experience.company} - {experience.city}
             </p>

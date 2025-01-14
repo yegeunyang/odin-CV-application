@@ -146,7 +146,7 @@
 
       .card {
         color: black;
-        flex: 1 1 0; /* There is difference between 1 1 0 and 1 1 auto */
+        flex: 1 1 auto;
         display: flex;
         flex-direction: column;
 
