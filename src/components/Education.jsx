@@ -86,6 +86,7 @@ export default function Experience({ educations, setEducations }) {
                 type="text"
                 id="school"
                 name="school"
+                placeholder="School"
                 value={educations.draft.school}
                 onChange={draftEditHandler}
               />
@@ -96,6 +97,7 @@ export default function Experience({ educations, setEducations }) {
                 type="text"
                 id="degree"
                 name="degree"
+                placeholder="Degree"
                 value={educations.draft.degree}
                 onChange={draftEditHandler}
               />
@@ -108,6 +110,7 @@ export default function Experience({ educations, setEducations }) {
                 type="text"
                 id="date"
                 name="date"
+                placeholder="YYYY/MM - YYYY/MM"
                 value={educations.draft.date}
                 onChange={draftEditHandler}
               />
@@ -118,6 +121,7 @@ export default function Experience({ educations, setEducations }) {
                 type="text"
                 id="city"
                 name="city"
+                placeholder="City"
                 value={educations.draft.city}
                 onChange={draftEditHandler}
               />
@@ -130,6 +134,7 @@ export default function Experience({ educations, setEducations }) {
                 type="text"
                 id="about"
                 name="about"
+                placeholder="Description"
                 value={educations.draft.about}
                 onChange={draftEditHandler}
               />

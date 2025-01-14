@@ -86,6 +86,7 @@ export default function Experience({ experiences, setExperiences }) {
                 type="text"
                 id="title"
                 name="title"
+                placeholder="Job title"
                 value={experiences.draft.title}
                 onChange={draftEditHandler}
               />
@@ -96,6 +97,7 @@ export default function Experience({ experiences, setExperiences }) {
                 type="text"
                 id="company"
                 name="company"
+                placeholder="Company"
                 value={experiences.draft.company}
                 onChange={draftEditHandler}
               />
@@ -108,6 +110,7 @@ export default function Experience({ experiences, setExperiences }) {
                 type="text"
                 id="date"
                 name="date"
+                placeholder="YYYY/MM - YYYY/MM"
                 value={experiences.draft.date}
                 onChange={draftEditHandler}
               />
@@ -118,6 +121,7 @@ export default function Experience({ experiences, setExperiences }) {
                 type="text"
                 id="city"
                 name="city"
+                placeholder="City"
                 value={experiences.draft.city}
                 onChange={draftEditHandler}
               />
@@ -130,6 +134,7 @@ export default function Experience({ experiences, setExperiences }) {
                 type="text"
                 id="about"
                 name="about"
+                placeholder="Description"
                 value={experiences.draft.about}
                 onChange={draftEditHandler}
               />

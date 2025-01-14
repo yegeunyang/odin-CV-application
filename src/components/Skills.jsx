@@ -53,6 +53,7 @@ export default function Skills({ skills, setSkills }) {
                 type="text"
                 className="category"
                 name="category"
+                placeholder="Category"
                 value={skill.category}
                 onChange={editSkillHandler(skill)}
               />
@@ -60,6 +61,7 @@ export default function Skills({ skills, setSkills }) {
                 type="text"
                 className="skill"
                 name="skill"
+                placeholder="Skills"
                 value={skill.item}
                 onChange={editSkillHandler(skill)}
               />
