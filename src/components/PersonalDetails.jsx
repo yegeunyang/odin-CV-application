@@ -65,6 +65,7 @@ export default function PersonalDetails({
               type="text"
               id="firstName"
               name="firstName"
+              placeholder="Jane"
               value={personalDetails.firstName}
               onChange={editPersonalDetailsHandler}
             />
@@ -75,6 +76,7 @@ export default function PersonalDetails({
               type="text"
               id="lastName"
               name="lastName"
+              placeholder="Doe"
               value={personalDetails.lastName}
               onChange={editPersonalDetailsHandler}
             />
@@ -87,6 +89,7 @@ export default function PersonalDetails({
               type="text"
               id="email"
               name="email"
+              placeholder="janedoe@icloud.com"
               value={personalDetails.email}
               onChange={editPersonalDetailsHandler}
             />
@@ -97,6 +100,7 @@ export default function PersonalDetails({
               type="text"
               id="phone"
               name="phone"
+              placeholder="(555) 555-5555"
               value={personalDetails.phone}
               onChange={editPersonalDetailsHandler}
             />
@@ -109,6 +113,7 @@ export default function PersonalDetails({
               type="text"
               id="address"
               name="address"
+              placeholder="Address"
               value={personalDetails.address}
               onChange={editPersonalDetailsHandler}
             />
@@ -119,6 +124,7 @@ export default function PersonalDetails({
               type="text"
               id="occupation"
               name="occupation"
+              placeholder="Occupation"
               value={personalDetails.occupation}
               onChange={editPersonalDetailsHandler}
             />
@@ -131,6 +137,7 @@ export default function PersonalDetails({
               type="text"
               id="linkedin"
               name="linkedin"
+              placeholder="LinkedIn"
               value={personalDetails.linkedin}
               onChange={editPersonalDetailsHandler}
             />
@@ -141,6 +148,7 @@ export default function PersonalDetails({
               type="text"
               id="github"
               name="github"
+              placeholder="Github"
               value={personalDetails.github}
               onChange={editPersonalDetailsHandler}
             />
@@ -152,6 +160,7 @@ export default function PersonalDetails({
             <textarea
               id="about"
               rows="4"
+              placeholder="Tell us about yourself :)"
               value={personalDetails.about}
               onChange={editPersonalDetailsHandler}
             />
