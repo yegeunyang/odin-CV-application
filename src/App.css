@@ -167,6 +167,10 @@
         textarea:hover {
           outline: 2px solid #333333;
         }
+
+        input::file-selector-button {
+          color: black;
+        }
       }
     }
   }
