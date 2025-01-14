@@ -31,7 +31,7 @@ function App() {
     lastName: "Doe",
     email: "janedoe@icloud.com",
     phone: "(555) 555-5555",
-    address: "Madison, Wsiconsin",
+    address: "Madison, WI",
     occupation: "Software Engineer",
     linkedin: "https://linkedin.com/janedoe",
     github: "https://github.com/janedoe",
